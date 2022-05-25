@@ -2,9 +2,9 @@ import React from 'react';
 import $ from 'jquery';
 
 $.ajax({
-    url: './data/lvM8.csv',
+    url: './data/lv8.csv',
     dataType: 'text',
-}).done(read_hard);
+}).done(read_oni);
 
 $(function() {
     $(".level_button.hard_8").click(function(){   

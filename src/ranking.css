@@ -65,7 +65,10 @@
 
     transition-duration: 0.3s;
     cursor: pointer;
+    opacity: 0.35;
 }
+
+.level_button:hover{opacity: 0.75;}
 
 .level_info {
     width: 100%;
@@ -74,21 +77,20 @@
     position: relative;
 
     text-align: center;
-    display: none;
 }
 
 .hard_8 {background-color: rgba(65, 75, 43, 0.35);}
-.hard_8:hover {background-color: rgba(65, 75, 43, 0.85);}
+.hard_8:hover {background-color: rgba(65, 75, 43, 1);}
 .oni_6 {background-color: rgba(253, 37, 135, 0.35);}
-.oni_6:hover {background-color: rgba(253, 37, 135, 0.85);}
+.oni_6:hover {background-color: rgba(253, 37, 135, 1);}
 .oni_7 {background-color: rgba(218, 38, 160.25, 0.35);}
-.oni_7:hover {background-color: rgba(218, 38, 160.25, 0.85);}
+.oni_7:hover {background-color: rgba(218, 38, 160.25, 1);}
 .oni_8 {background-color: rgba(183, 40, 185.5, 0.35);}
-.oni_8:hover {background-color: rgba(183, 40, 185.5, 0.85);}
+.oni_8:hover {background-color: rgba(183, 40, 185.5, 1);}
 .oni_9 {background-color: rgba(147, 42, 210.75, 0.35);}
-.oni_9:hover {background-color: rgba(147, 42, 210.75, 0.85);}
+.oni_9:hover {background-color: rgba(147, 42, 210.75, 1);}
 .oni_10 {background-color: rgba(112, 44, 236, 0.35);}
-.oni_10:hover {background-color: rgba(112, 44, 236, 0.85);}
+.oni_10:hover {background-color: rgba(112, 44, 236, 1);}
 
 #hard_8 {background-color: rgba(65, 75, 43, 1);}
 #oni_6 {background-color: rgba(253, 37, 135, 1);}
@@ -318,6 +320,7 @@ div.kids {
     font-size: 45px;
 
     padding: 0px;
+    margin: 0px;
     border-left: 3px solid rgb(180, 180, 180);
     border-top: 2px solid rgb(180, 180, 180);
     border-bottom: 2px solid rgb(180, 180, 180);
