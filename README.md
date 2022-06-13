@@ -1,9 +1,11 @@
-# 서열표 페이지 옮기기 완료
+# 모바일 대응되게 반응형으로 바꾸는 중
 
 # must set up
 npm i react-scripts
 npm i jquery
 npm i html2canvas
+npm install selenium-webdriver
+npm i puppeteer
 
 # how to test
 npm run start

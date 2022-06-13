@@ -1,4 +1,4 @@
-import React from 'react';
+import React , {useEffect} from 'react';
 import $ from 'jquery';
 import html2canvas from 'html2canvas';
 
@@ -47,40 +47,39 @@ function downloadURI(uri, name){
 	link.click();
 }
 
-
 const LevelMamu = () => {
 	return (
-		<section id = "level_mamu">
+		<div id = "level_mamu">
 			<button className = "level_button hard_8"  
                     onClick = {() => {openPage('hard_8', 0, 'rgba(65, 75, 43, 1)')}}>
 				<img src="img/hard_8.png" width = {'100px'} height = {'100px'} />
-			</button>
+			</button> {/* 하드 8렙 */}
 
 			<button className = "level_button oni_6" 
                     onClick = {() => {openPage('oni_6', 1, 'rgba(253, 37, 135, 1)')}}>
 				<img src="img/oni_6.png" width = {'100px'} height = {'100px'} />
-			</button>
+			</button> {/* 오니 6렙 */}
 			
         	<button className = "level_button oni_7" 
                     onClick = {() => {openPage('oni_7', 2, 'rgba(218, 38, 160.25, 1)')}}>
 				<img src="img/oni_7.png" width = {'100px'} height = {'100px'} />
-			</button>
+			</button> {/* 오니 7렙 */}
 			  
         	<button className = "level_button oni_8" 
                     onClick = {() => {openPage('oni_8', 3, 'rgba(183, 40, 185.5, 1)')}}>
 				<img src="img/oni_8.png" width = {'100px'} height = {'100px'} />
-			</button>
+			</button> {/* 오니 8렙 */}
 			  
         	<button className = "level_button oni_9" 
                     onClick = {() => {openPage('oni_9', 4, 'rgba(147, 42, 210.75, 1)')}}>
 				<img src="img/oni_9.png" width = {'100px'} height = {'100px'} />
-			</button>
+			</button> {/* 오니 9렙 */}
 			
         	<button className ="level_button oni_10" id="defaultOpen" 
                     onClick = {() => {openPage('oni_10', 5, 'rgba(112, 44, 236, 1)')}}>
 				<img src="img/oni_10.png" width = {'100px'} height = {'100px'} />
-			</button>
-	    </section>
+			</button> {/* 오니 10렙 */}
+	    </div>
 	)
 }
 
@@ -92,38 +91,48 @@ const LevelInfo = () => {
 					<img className = "level_info_img" src="img/oni_8.png"/>
 					<p className = "level_songs_2"></p>
 				</div>
-				<table className = "level_info_table">
-                    <tbody>
-                        <tr>
-						    <th className = "level_info_table_0">기준</th>
-						    <th>진행도</th>
-					    </tr>
-					    <tr>
-						    <td className = "level_info_table_0">왕관</td>
-						    <td>추후</td>
-					    </tr>
-					    <tr>
-						    <td className = "level_info_table_0">극</td>
-						    <td>추가예정</td>
-					    </tr>
-                    </tbody>
-				</table>
+				<div className = 'level_info_table_div'>
+					<table className = "level_info_table">
+                    	<tbody>
+                        	<tr>
+						    	<th className = "level_info_table_0">기준</th>
+						    	<th>진행도</th>
+					    	</tr>
+					    	<tr>
+						    	<td className = "level_info_table_0">왕관</td>
+						    	<td>추후</td>
+					    	</tr>
+					    	<tr>
+						    	<td className = "level_info_table_0">극</td>
+						    	<td>추가예정</td>
+					    	</tr>
+                    	</tbody>
+					</table>
+				</div>
 			</div>
-			<button className = "interlock_btn" title = "공사중"> 공사중 </button>
-			<button onClick = {() => {downImg()}} className = "save_btn" title = "서열표 저장하기"> 서열표 저장 </button>
 		</div>
+	)
+}
+
+const Footer = () => {
+	return (
+		<footer id = "footer">
+			<ul>
+				<li> 누니머기는 엉덩이가 아니다! </li>
+				<li> 누니머기는 귀여운 포켓몬이다! </li>
+				<li> <a href="#" onClick = {() => {window.open('https://www.pokemon.com/us/pokedex/snom'); return false}}> 누니머기가 뭔가요? </a> </li>
+			</ul>
+		</footer>
 	)
 }
 
 function App() {
   return (
     <div>
-        <section id = "level">
-		    <LevelMamu/>
-            <LevelInfo/>
-	    </section>
+		<LevelMamu/>
+		<LevelInfo/>
 		
-        <section id = "ranking">
+		<section id = "ranking">
 			<section className = "rank_header">
 				<img className = "header_background" src = "img/rank_logo.jpg"/>
 				<img className = "header_1" src="img/header.png"/>
@@ -139,13 +148,7 @@ function App() {
 			<button id="Top_btn" onClick = {() => {topFunction()}} title="Go to top"> Top </button>
 		</section>
 
-        <footer id = "footer">
-			<ul>
-				<li> <a> 누니머기는 엉덩이가 아니다! </a> </li>
-				<li> <a> 누니머기는 귀여운 포켓몬이다!</a> </li>
-				<li> <a href="#" onClick = {() => {window.open('https://www.pokemon.com/us/pokedex/snom'); return false}}> 누니머기가 뭔가요? </a> </li>
-			</ul>
-		</footer>
+        <Footer/>
     </div>
   );
 }

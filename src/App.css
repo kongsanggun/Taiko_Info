@@ -39,21 +39,14 @@
 
 #footer {
   display: flex;
-  align-items: center;
-  padding: 0px 30px;
+  padding: 0px 0px 0px 0px;
   background: #313030;
-}
-
-#footer li{
-
-  list-style: none;
-}
-
-#footer li a{
 
   font-family : 'SDKukdetopokki-Lt';
   list-style: none;
-  font-size: 12px;
+  font-size: 10px;
   color: rgb(255, 255, 255);
-
 }
+
+#footer li{list-style: none; padding: 0px 0px 0px 0px;}
+#footer li a{  font-size: 10px; color: rgb(255, 255, 255);}
