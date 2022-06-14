@@ -21,6 +21,10 @@
     font-family : 'SDKukdetopokki-LT';
 }
 
+::-webkit-scrollbar { width: 15px; }
+::-webkit-scrollbar-thumb { background-color: rgb(64, 64, 64); }
+::-webkit-scrollbar-track { background-color: rgb(132, 132, 132); } 
+
 #level_mamu {
     margin: 0px;
     border: 0px;
@@ -111,7 +115,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
 } /* 레벨 정보 */
 
 .level_info_img {padding-bottom: 25px;}
@@ -145,8 +148,86 @@
 .level_info_table th {height: 50px;}
 .level_info_table tr {height: 40px;}
 
+#ranking {
+    width: 100vw;
+    height: auto;
+    padding : 0px;
+} /* 서열표 항목 */
+
+.rank_header {
+    width: 100%;
+
+    height: 40vw;
+    min-height: 250px;
+    max-height: 450px;
+
+    padding : 0px;
+    position: relative;
+
+    background-color: rgb(64, 64, 64);
+} /* 서열표 헤더 */
+
+.header_background {
+    width: 100%;
+    height: auto;
+    opacity: 0.5;
+
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+
+    mask-image: linear-gradient(black, transparent);
+    -webkit-mask-image: linear-gradient(black, transparent);
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+} /* 서열표 헤더 배경화면 */
+
+.header_1 {
+    position: absolute;
+    bottom: 10px;
+    left: 2.5vw;
+
+    width: 25vw;
+    max-width: 409px;
+} /* 헤더 초견주의 */
+.header_2 {
+    position: absolute;
+    bottom: 10px;
+    right: 2.5vw;
+
+    width: 25vw;
+    max-width: 418px;
+} /* 헤더 장르 */
+.header_3 {
+    position: absolute;
+    bottom: 10px;
+    left: 40vw;
+
+    width: 25vw;
+    max-width: 418px;
+} /* 헤더 설명 */
+.header_4 {
+    position: absolute;
+    top: 30px;
+    left: calc(50vw - 95px);
+
+} /* 헤더 난이도 아이콘 */
+
+@media screen and (max-width : 720px) {
+    .header_1 {
+       display: none;
+    } /* 헤더 초견주의 */
+    .header_2 {
+        display: none;
+    } /* 헤더 장르 */
+    .header_3 {
+        display: none;
+    }
+} /* 헤더 난이도 모바일 */
+
 .level_songs {
-    font-size: 35px;
+    font-size: calc(20px + 1vmin);
     text-shadow: -2px 0 rgb(255, 255, 255), 0 2px rgb(255, 255, 255), 2px 0 rgb(255, 255, 255), 0 -2px rgb(255, 255, 255);
     height : 60px;
     color: rgb(136, 0, 21);
@@ -207,67 +288,10 @@
   
 .save_btn:hover {background-color: rgb(128, 128, 128); color: black;}
 
-.rank_header {
-    width: 100%;
-    height: 400px;
-    padding : 0px;
-    position: relative;
-
-    background-color: rgb(64, 64, 64);
-}
-
-.header_background {
-    
-    width: 100%;
-    opacity: 0.5;
-
-    filter: blur(5px);
-    -webkit-filter: blur(5px);
-
-    mask-image: linear-gradient(black, transparent);
-    -webkit-mask-image: linear-gradient(black, transparent);
-
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.header_1 {
-    position: absolute;
-    bottom: 5px;
-    left: 60px;
-}
-.header_2 {
-    position: absolute;
-    bottom: 5px;
-    right: 57px;
-}
-.header_3 {
-    position: absolute;
-    bottom: 5px;
-    right: 38%;
-}
-.header_4 {
-    position: absolute;
-    top: 25px;
-    right: 45%;
-}
-.header_center {
-    position: absolute;
-    bottom: 50%;
-    right: 50%;
-}
-.song_total {
-    position: absolute;
-    bottom: 0px;
-    left: 27%;
-}
 #song_ranked {
-
-    padding : 0px 75px 30px 75px;
+    padding : 0px 2.5vw 30px 2.5vw;
     background-color: rgb(64, 64, 64);
-
-}
+} /* 서열표 */
 
 div.pop {
     width: 100%;
@@ -318,24 +342,19 @@ div.kids {
 }
 
 .ranking {
-
     position: relative;
     border-collapse: collapse;
     width : 100%;
-
 }
 
 .ranking table{
-
     border-collapse: collapse;
     width : 100%;
-
 }
 
 .ranking th {
-
-    width: 120px;
-    font-size: 45px;
+    width: 10%;
+    font-size: calc(15px + 1.5vmax);
 
     padding: 0px;
     margin: 0px;
@@ -343,11 +362,9 @@ div.kids {
     border-top: 2px solid rgb(180, 180, 180);
     border-bottom: 2px solid rgb(180, 180, 180);
     background-color: rgba(255, 255, 255, 0.80);
-
-}
+} /* 서열표 */
 
 .ranking td {
-    
     border-collapse: collapse;
     background-color: rgba(238, 238, 238, 0.80);
     border: 2px solid rgb(180, 180, 180);
@@ -355,14 +372,11 @@ div.kids {
     padding: 0px;
     width: 15%;
     height: 60px;
-    
 }
 
 .content_song {
-
     width: 100%;
     height: 100%;
-
 }
 
 .rank_0 {color: rgb(0, 0, 0); font-family : 'SDKukdetopokki';}
@@ -400,7 +414,7 @@ p.Title {
 
     list-style: none;
     vertical-align: middle;
-    font-size: 15px;
+    font-size: calc(10px + 0.5vmin);
     line-height: 1.1em;
 
     height : 30px;
@@ -418,7 +432,7 @@ p.Title_Ura {
 
     list-style: none;
     vertical-align: middle;
-    font-size: 15px;
+    font-size: calc(10px + 0.5vmin);
     line-height: 1.1em;
 
     height : 30px;
@@ -436,7 +450,7 @@ p.Title_Hard {
 
     list-style: none;
     vertical-align: middle;
-    font-size: 15px;
+    font-size: calc(10px + 0.5vmin);
     line-height: 1.1em;
 
     height : 30px;
@@ -454,7 +468,7 @@ p.Subtitle {
 
     list-style: none;
     vertical-align: middle;
-    font-size: 12px;
+    font-size: calc(9px + 0.25vmin);
     height : 12px;
     width : 95%;
     color: rgb(127, 127, 127);
@@ -462,8 +476,16 @@ p.Subtitle {
     word-break: break-all;
 }
 
-.Bottom_Right {
+@media screen and (max-width : 720px) {
+    .ranking th { width: 15%; }
+    .ranking td { width: 25%; }
+    p.Title { font-size: 8px; }
+    p.Title_Ura  { font-size: 8px; }
+    p.Title_Hard { font-size: 8px; }
+    p.Subtitle{bottom: 4px; font-size: 7px; height : auto;}
+} /* 서열표 폰트 모바일 */
 
+.Bottom_Right {
     position: absolute;
     width: auto;
     height: 15px;
@@ -471,11 +493,9 @@ p.Subtitle {
     bottom: 1px;
     right: 1px;
     margin: 0px;
-
 }
 
 .Top_Right {
-
     position: absolute;
     width: auto;
     height: auto;
@@ -483,48 +503,70 @@ p.Subtitle {
     top: 1px;
     right: 1px;
     opacity: 0.85;
+}
 
+.Dani {
+
+    min-height: 10px;
+    max-height: 30px;
+    min-width: 10px;
+    max-width: 30px;
+
+    width: 4vmin;
+    height: 4vmin;
 }
 
 .individual {
-
     background-color: rgb(237, 28, 36);
-    height: 15px;
-    width: 15px;
+
+    min-height: 5px;
+    max-height: 15px;
+    min-width: 5px;
+    max-width: 15px;
+
+    height: 2vmin;
+    width: 2vmin;
+
     border-radius: 100%;
     border-left: 2px;
-
-
 }
 
 .first_play {
-
     background-color: rgb(34, 177, 76);
-    height: 15px;
-    width: 15px;
+
+    min-height: 5px;
+    max-height: 15px;
+    min-width: 5px;
+    max-width: 15px;
+
+    height: 2vmin;
+    width: 2vmin;
+
     border-radius: 100%;
     border-left: 2px;
-
 }
 
 .full_combo {
-
     background-color: rgb(163, 73, 164);
-    height: 15px;
-    width: 15px;
+
+    min-height: 5px;
+    max-height: 15px;
+    min-width: 5px;
+    max-width: 15px;
+
+    height: 2vmin;
+    width: 2vmin;
+
     border-radius: 100%;
     border-left: 2px;
-
 }
 
 #Go_top {
-
     padding : 0px 75px 100px 75px;
     background-color: rgb(64, 64, 64);
 
     text-align: center;
     align-items: center;
-
 }
 
 #Top_btn {

@@ -83,14 +83,17 @@ function read_hard(data) {
     
     var songs = allRows.length - 2;
     var table2 = '총 ' + songs  + '보면';
-    $('.level_songs').empty();
-    $('.level_songs').append(table2);
     $('.level_songs_2').empty();
     $('.level_songs_2').append(table2);
 
     var rank_index = 1; // 테이블 갯 수
     var row = 0; // 줄 수
-    var remain = 6; // 남은 열 수 
+    var remain_max; // 최대 남은 열 수 (폭의 길이에 따라서 달라짐)
+
+    if (window.innerWidth > 1000) {remain_max = 6;}
+    else {remain_max = 3;}
+
+    var remain = remain_max; // 남은 열 수 
     
     var table = '<table class = "ranking"> <tr> <th class = "rank_2" rowspan = "10">' + rank[rank_index] + '</th>';
 
@@ -99,7 +102,7 @@ function read_hard(data) {
 
         if (rowCells[3] != rank_index) {
             
-            for (var tmp = 0; tmp < remain % 6; tmp++) {
+            for (var tmp = 0; tmp < remain % remain_max; tmp++) {
                 table += '<td></td>';
             } // 남은 갯수 채우기
 
@@ -108,7 +111,7 @@ function read_hard(data) {
                 rank_index ++;
             }          
             row = 0;
-            remain = 6;
+            remain = remain_max;
 
             table += '<table class = "ranking"> <tr> <th class = "rank_' + rank_index+ '" rowspan = "10">' + rank[rank_index] + '</th>';
         }
@@ -142,7 +145,7 @@ function read_hard(data) {
         table += '</div><div class = "Top_Right">';
 
         if (rowCells[9] != 0) {
-            table += ' <img src="img/' + dan[rowCells[9]] + '.png" style="width:30px;height:30px;">';
+            table += ' <img class = "Dani" src="img/' + dan[rowCells[9]] + '.png">';
         }
 
         table += '</div></div></div></td>'; // 곡 정보 입력 끝
@@ -150,12 +153,12 @@ function read_hard(data) {
         
         if (remain == 0) {
             table += '</tr><tr>';
-            remain = 6;
+            remain = remain_max;
         } // 줄 바꿈
 
     } 
 
-    for(var tmp = 0; tmp < remain % 6; tmp++) {
+    for(var tmp = 0; tmp < remain % remain_max; tmp++) {
         table += '<td></td>';
     } // 남은 갯수 채우기
     
@@ -178,14 +181,17 @@ function read_lv10(data) {
     
     var songs = allRows.length - 2;
     var table2 = '총 ' + songs  + '보면';
-    $('.level_songs').empty();
-    $('.level_songs').append(table2);
     $('.level_songs_2').empty();
     $('.level_songs_2').append(table2);
 
     var rank_index = 0; // 테이블 갯 수
     var row = 0; // 줄 수
-    var remain = 6; // 남은 열 수 
+    var remain_max; // 최대 남은 열 수 (폭의 길이에 따라서 달라짐)
+
+    if (window.innerWidth > 1000) {remain_max = 6;}
+    else {remain_max = 3;}
+
+    var remain = remain_max; // 남은 열 수 
     
     var table = '<table class = "ranking"> <tr> <th class = "rank_0" rowspan = "10">' + rank[rank_index] + '</th>';
 
@@ -195,7 +201,7 @@ function read_lv10(data) {
 
         if (rowCells[3] != rank_index) {
             
-            for (var tmp = 0; tmp < remain % 6; tmp++) {
+            for (var tmp = 0; tmp < remain % remain_max; tmp++) {
                 table += '<td></td>';
             } // 남은 갯수 채우기
 
@@ -203,7 +209,7 @@ function read_lv10(data) {
             rank_index ++;
 
             row = 0;
-            remain = 6;
+            remain = remain_max;
 
             table += '<table class = "ranking"> <tr> <th class = "rank_' + rank_index+ '" rowspan = "10">' + rank[rank_index] + '</th>';
         }
@@ -243,7 +249,7 @@ function read_lv10(data) {
         table += '</div><div class = "Top_Right">';
 
         if (rowCells[10] != 0) {
-            table += ' <img src="img/' + dan[rowCells[10]] + '.png" style="width:30px;height:30px;">';
+            table += ' <img class = "Dani" src="img/' + dan[rowCells[10]] + '.png">';
         }
 
         table += '</div></div></div></td>'; // 곡 정보 입력 끝
@@ -251,12 +257,12 @@ function read_lv10(data) {
         
         if (remain == 0) {
             table += '</tr><tr>';
-            remain = 6;
+            remain = remain_max;
         } // 줄 바꿈
 
     } 
 
-    for(var tmp = 0; tmp < remain % 6; tmp++) {
+    for(var tmp = 0; tmp < remain % remain_max; tmp++) {
         table += '<td></td>';
     } // 남은 갯수 채우기
     
@@ -277,16 +283,19 @@ function read_oni(data) {
     
     var songs = allRows.length - 2;
     var table2 = '총 ' + songs  + '보면';
-    $('.level_songs').empty();
-    $('.level_songs').append(table2);
     $('.level_songs_2').empty();
     $('.level_songs_2').append(table2);
 
     var rank_index = 2; // 테이블 갯 수
     var row = 0; // 줄 수
-    var remain = 6; // 남은 열 수 
+    var remain_max; // 최대 남은 열 수 (폭의 길이에 따라서 달라짐)
+
+    if (window.innerWidth > 1000) {remain_max = 6;}
+    else {remain_max = 3;}
+
+    var remain = remain_max; // 남은 열 수 
     
-    var table = '<table class = "ranking"> <tr> <th class = "rank_2" rowspan = "10">' + rank[rank_index] + '</th>';
+    var table = '<table class = "ranking"> <tr> <th class = "rank_2" rowspan = "100">' + rank[rank_index] + '</th>';
 
     for (var singleRow = 1; singleRow < allRows.length - 1; singleRow++) {
 
@@ -294,7 +303,7 @@ function read_oni(data) {
 
         if (rowCells[3] != rank_index) {
             
-            for (var tmp = 0; tmp < remain % 6; tmp++) {
+            for (var tmp = 0; tmp < remain % remain_max; tmp++) {
                 table += '<td></td>';
             } // 남은 갯수 채우기
 
@@ -303,9 +312,9 @@ function read_oni(data) {
                 rank_index ++;
             }          
             row = 0;
-            remain = 6;
+            remain = remain_max;
 
-            table += '<table class = "ranking"> <tr> <th class = "rank_' + rank_index+ '" rowspan = "10">' + rank[rank_index] + '</th>';
+            table += '<table class = "ranking"> <tr> <th class = "rank_' + rank_index+ '" rowspan = "100">' + rank[rank_index] + '</th>';
         }
 
         table += '<td><div class = "content_song"><div class = "genre">';
@@ -343,7 +352,7 @@ function read_oni(data) {
         table += '</div><div class = "Top_Right">';
 
         if (rowCells[10] != 0) {
-            table += ' <img src="img/' + dan[rowCells[10]] + '.png" style="width:30px;height:30px;">';
+            table += ' <img class = "Dani" src="img/' + dan[rowCells[10]] + '.png">';
         }
 
         table += '</div></div></div></td>'; // 곡 정보 입력 끝
@@ -351,12 +360,12 @@ function read_oni(data) {
         
         if (remain == 0) {
             table += '</tr><tr>';
-            remain = 6;
+            remain = remain_max;
         } // 줄 바꿈
 
     } 
 
-    for(var tmp = 0; tmp < remain % 6; tmp++) {
+    for(var tmp = 0; tmp < remain % remain_max; tmp++) {
         table += '<td></td>';
     } // 남은 갯수 채우기
     

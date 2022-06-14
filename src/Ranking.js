@@ -114,6 +114,21 @@ const LevelInfo = () => {
 	)
 }
 
+const Ranking_PC = () => {
+	return (
+		<div id = "ranking">
+			<section className = "rank_header">
+				<img className = "header_background" src = "img/rank_logo.jpg"/>
+				<img className = "header_1" src="img/header.png"/> {/* 헤더 초견주의 */}
+				<img className = "header_2" src="img/header2.png"/> {/* 헤더 장르 */}
+				<img className = "header_3" src="img/header3.png"/> {/* 헤더 설명 */}
+				<img className = "header_4" src="img/oni_8.png"/> {/* 헤더 난이도 아이콘 */}
+			</section>
+			<section id = "song_ranked"></section>
+		</div>
+	)
+}
+
 const Footer = () => {
 	return (
 		<footer id = "footer">
@@ -128,26 +143,10 @@ const Footer = () => {
 
 function App() {
   return (
-    <div>
+    <div style={{overflowX : "hidden"}}>
 		<LevelMamu/>
 		<LevelInfo/>
-		
-		<section id = "ranking">
-			<section className = "rank_header">
-				<img className = "header_background" src = "img/rank_logo.jpg"/>
-				<img className = "header_1" src="img/header.png"/>
-				<img className = "header_2" src="img/header2.png"/>
-				<img className = "header_3" src="img/header3.png"/>
-				<img className = "header_4" src="img/oni_8.png"/>
-				<div className = "song_total"> <p className = "level_songs"></p> </div>
-			</section>
-			<section id = "song_ranked"></section>
-		</section>
-
-        <section id = "Go_top">
-			<button id="Top_btn" onClick = {() => {topFunction()}} title="Go to top"> Top </button>
-		</section>
-
+		<Ranking_PC/>
         <Footer/>
     </div>
   );
